@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Game;
+use App\Club;
 use App\Group;
 use Faker\Generator as Faker;
 

@@ -18,7 +18,7 @@ class CreateGroupsTable extends Migration
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('club_id');
             $table->foreign('club_id')->references('id')->on('clubs')
-            ->onUpdate('cascade')->onDelete('cascade');
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
     public function down()
