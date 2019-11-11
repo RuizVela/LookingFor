@@ -1,4 +1,4 @@
-<form method="POST" action="club">
+<form method="POST" action="/club">
     @csrf
     <label>Nombre del club:</label>
     <input type="text" name="name">

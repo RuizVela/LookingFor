@@ -38,3 +38,5 @@ Route::get('user{user}/kick', 'ProfileController@kickFromGroup');
 Route::resource('answer', 'AnswerController')->except(['index','show']);
 
 Route::resource('comment', 'CommentController')->except(['index','show']);
+
+Route::resource('club', 'ClubController');
