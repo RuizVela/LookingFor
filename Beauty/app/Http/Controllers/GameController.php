@@ -16,7 +16,7 @@ class GameController extends Controller
     public function index()
     {
         $game=Game::all();
-        return view('games.index',['games'=>$game]);;
+        return view('games.index',['games'=>$game]);
 
     }
 
@@ -27,7 +27,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        return view('games.create');
     }
 
     /**
