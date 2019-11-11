@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
             OffersTableSeeder::class,
             AnswersTableSeeder::class,
             CommentsTableSeeder::class,
+            GamesTableSeeder::class,
         ]);
     }
 }
