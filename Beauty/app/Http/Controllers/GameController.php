@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Club;
 use App\Game;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        $game=Game::all();
+        return view('games.index',['games'=>$game]);;
+
     }
 
     /**

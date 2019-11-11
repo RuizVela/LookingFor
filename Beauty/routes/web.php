@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GameController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -40,3 +42,5 @@ Route::resource('answer', 'AnswerController')->except(['index','show']);
 Route::resource('comment', 'CommentController')->except(['index','show']);
 
 Route::resource('club', 'ClubController');
+
+Route::resource('game','GameController');
