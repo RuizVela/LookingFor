@@ -13,6 +13,9 @@ class CreateGroupsTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->timestamps();
+            $table->unsignedBigInteger('game_id');
+            $table->foreign('game_id')->references('id')->on('games')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
     public function down()
