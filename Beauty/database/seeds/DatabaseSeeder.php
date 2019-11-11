@@ -8,10 +8,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UsersTableSeeder::class,
+            GamesTableSeeder::class,
             GroupsTableSeeder::class,
             OffersTableSeeder::class,
             AnswersTableSeeder::class,
             CommentsTableSeeder::class,
+
         ]);
     }
 }

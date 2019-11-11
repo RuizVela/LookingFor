@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Group;
 use App\Offer;
 use Faker\Generator as Faker;
 use App\User;
@@ -12,6 +13,6 @@ $factory->define(Offer::class, function (Faker $faker) {
         'description'=>$faker->text(300),
         'group_offer'=>$faker->booLean(),
         'user_id'=>User::all()->random()->id,
-        
+        'game_id'=>Game::all()->random()->id
     ];
 });
