@@ -13,11 +13,6 @@ class DatabaseSeeder extends Seeder
             OffersTableSeeder::class,
             AnswersTableSeeder::class,
             CommentsTableSeeder::class,
-<<<<<<< HEAD
-
-=======
-            GamesTableSeeder::class,
->>>>>>> 8a7d1842c1d32f572c3d762c2769c6c6ac291be1
         ]);
     }
 }
