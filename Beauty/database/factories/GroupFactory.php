@@ -10,6 +10,7 @@ $factory->define(Group::class, function (Faker $faker) {
     return [
         'name'=> $faker->text(20),
         'description'=> $faker->text(100),
-        'game_id'=>Game::all()->random()->id
+        'game_id'=>Game::all()->random()->id,
+        'club_id'=>Club::all()->random()->id
     ];
 });
