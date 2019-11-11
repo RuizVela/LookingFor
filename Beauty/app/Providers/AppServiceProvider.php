@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Observers\GroupObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Group;
+use  Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Group::observe(GroupObserver::class);
+        Schema::defaultStringLength(191);
     }
 }
