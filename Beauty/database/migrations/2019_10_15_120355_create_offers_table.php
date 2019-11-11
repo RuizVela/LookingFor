@@ -17,6 +17,9 @@ class CreateOffersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            $table->unsignedBigInteger('game_id');
+            $table->foreign('game_id')->references('id')->on('games')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
     public function down()
