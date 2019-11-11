@@ -32,7 +32,8 @@ class ClubController extends Controller
     }
     public function update(Request $request, Club $club)
     {
-        //
+        $club->update($request->all());
+        return redirect("club/$club->id");
     }
     public function destroy(Club $club)
     {
