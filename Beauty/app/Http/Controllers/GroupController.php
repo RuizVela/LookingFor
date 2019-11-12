@@ -10,7 +10,7 @@ class GroupController extends Controller
 {
     public function index(Request $request)
     {   
-        // TODO Preguntar a David.
+        // TODO ruta para los equipos de cada juego
         $groups = Group::all()->where('game_id',$request->game_id);
         return view('Groups.index',['groups'=>$groups]);
     }
