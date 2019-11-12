@@ -6,8 +6,8 @@
 </form>
 
 @foreach ($groups as $group)
-<li> {{$group->name}} <form method="GET" action="/group/{{$group->id}}">
-<input type="submit" value="Mostrar">
+<form method="GET" action="/group/{{$group->id}}">
+<input type="submit" value="{{$group->name}}">
 </form>
-</li>
+
 @endforeach

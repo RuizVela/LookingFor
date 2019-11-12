@@ -6,6 +6,9 @@
     <label>Descripción:</label>
     <input type="text" name="description">
     <br>
+    <label>Juego:</label>
+    <input type="text" name="game_id">
+    <br>
 <input type="submit" value="Crear">
 </form>
 <form method="GET" action="/group">

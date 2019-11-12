@@ -2,25 +2,33 @@
 <input type="submit" value="Página principal">
 </form>
 
-<form method="GET" action="/group">
-<input type="submit" value="Lista de Grupos">
+Nombre de equipo: {{$group->name}}<br>
+Descripción: {{$group->description}}<br>
+Club al que pertenece:
+<form action="/club/{{$club->id}}" method="GET">
+    <input type="submit" value="{{$club->name}}">
 </form>
+<br>
+A que juega este equipo: {{$game->name}}<br><br>
 
-<?php
-echo "Nombre: $group->name<br>";
-echo "Descripción: $group->description<br>";
-?>
-<tr>
-    <br>
-Miembros:
+Administradores del equipo:<br>
+
+@foreach($admins as $admin)
+    {{$admin->name}}<br>
+    
+@endforeach
+
+<br>
+Miembros de este equipo:
 <br>
 @foreach ($group->users as $user)
-<td>
 <br>
 {{$user->name}} 
-</td>
+<form method="GET" action="/profile/{{$user->id}}">
+    <input type="submit" value="Mostrar">
+</form>
+
 @endforeach
-</tr>
 
 @can('edit',$group)
 <form method="GET" action="/group/{{$group->id}}/edit">

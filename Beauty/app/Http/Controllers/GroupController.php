@@ -26,7 +26,10 @@ class GroupController extends Controller
     }
     public function show(Group $group)
     {
-        return view('groups/group',['group'=>$group]);
+        $club = $group->club;
+        $game = $group->game;
+        $admins = $group->getAdmins;
+        return view('groups/group',['group'=>$group],['club'=>$club, 'game'=>$game, 'admins'=>$admins]);
     }
     public function edit(Group $group)
     {
