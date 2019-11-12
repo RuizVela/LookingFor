@@ -16,7 +16,7 @@ class CreateGroupsTable extends Migration
             $table->unsignedBigInteger('game_id');
             $table->foreign('game_id')->references('id')->on('games')
                 ->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('club_id');
+            $table->unsignedBigInteger('club_id')->nullable();
             $table->foreign('club_id')->references('id')->on('clubs')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
