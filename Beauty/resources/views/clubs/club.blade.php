@@ -11,10 +11,13 @@ Descripción: {{$club->description}}<br>
         @method('delete')
         <input type="submit" value="eliminar">
 </form>
+
+{{-- TODO: preguntar david --}}
+@if($groups->first->id != null )
 Equipos que pertenecen a este club:
     @foreach($groups as $group)
     <form method="GET" action="/group/{{$group->id}}">
         <input type="submit" value="{{$group->name}}">
     </form>
     @endforeach
-
+@endif
