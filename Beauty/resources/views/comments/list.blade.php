@@ -1,3 +1,4 @@
+Comentarios:
 @foreach ($comments as $comment)
     <li> {{$comment->user->name}}: {{$comment->body}}
     </li>

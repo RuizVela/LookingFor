@@ -1,8 +1,7 @@
+Lista de Juegos:<br>
 @foreach ($games as $game)
-    {{$game->name}}<br>
-    <form action="/game/{{$game->id}}/edit"
-        method="GET"> 
-        <input type="submit" value="Editar">
-    </form>
     
+<form action="/game/{{$game->id}}" method="GET">
+    <input type="submit" value="{{$game->name}}"> <br>
+</form>
 @endforeach

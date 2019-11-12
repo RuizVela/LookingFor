@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Game;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,6 +17,7 @@ class HomeController extends Controller
 
     public function main()
     {
-        return view('main');
+        $games = Game::all();
+        return view('main',['games'=>$games]);
     }
 }
