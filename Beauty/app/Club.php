@@ -10,4 +10,7 @@ class Club extends Model
         'name',
         'description',
     ];
+    public function groups(){
+        return $this->hasMany('App\Group');
+    }
 }

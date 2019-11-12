@@ -17,4 +17,7 @@ class Offer extends Model
     {
         return $this->hasMany('App\Answer');
     }
+    public function game(){
+        return $this->belongsTo('App\Game');
+    }
 }

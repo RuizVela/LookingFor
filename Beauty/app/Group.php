@@ -6,14 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
+    protected $fillable = [
+        'name', 'description', 'game_id'
+    ];
+
     public function users()
     {
         return $this->belongsToMany('App\User')->withPivot('admin');
     }
-    protected $fillable = [
-        'name', 'description'
-    ];
-    
+    public function club()
+    {
+        return $this->belongsTo('App\Club');
+    }
+    public function game()
+    {
+        return $this->belongsTo('App\Game');
+    }
     public function addUser($userId)
     {
         $this->users()->attach($userId);
