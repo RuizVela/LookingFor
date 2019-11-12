@@ -8,8 +8,11 @@
     <input type="submit" value="Mostrar equipos">
 </form>
 
-<form action="/game/{{$game->id}}/edit"
+<form action="/offer" method="GET">
+    <input type="submit" value="Mostrar ofertas">
+</form>
+
+ <form action="/game/{{$game->id}}/edit"
     method="GET"> 
     <input type="submit" value="Editar">
 </form>
-
