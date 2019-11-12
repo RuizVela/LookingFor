@@ -6,9 +6,10 @@
     <label>Descripción:</label>
     <input type="text" name="description">
     <br>
-    <label>Juego:</label>
-    <input type="text" name="game_id">
-    <br>
+
+    {{-- TODO: definir $group para poder mandar game_id --}}
+<input type="hidden" name="game_id" value="{{$group->game_id}}">
+
 <input type="submit" value="Crear">
 </form>
 <form method="GET" action="/group">

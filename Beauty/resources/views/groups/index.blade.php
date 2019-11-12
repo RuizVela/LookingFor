@@ -1,8 +1,9 @@
 <form method="GET" action="/main">
 <input type="submit" value="Página principal">
 </form>
+
 <form method="GET" action="/group/create">
-<input type="submit" value="Crear Grupo">
+<input type="submit" value="Crear Equipo">
 </form>
 
 @foreach ($groups as $group)

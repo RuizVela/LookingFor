@@ -1,3 +1,8 @@
+<form method="GET" action="/main">
+    <input type="submit" value="Página principal">
+    </form>
+    
+
 <form action="/group" method="GET">
     <input type="hidden" name="game_id" value="{{$game->id}}">
     <input type="submit" value="Mostrar equipos">
