@@ -24,7 +24,8 @@ class ClubController extends Controller
     }
     public function show(Club $club)
     {
-        return view('clubs/club',['club'=>$club]);
+        $groups = $club->groups;
+        return view('clubs/club',['club'=>$club],['groups'=>$groups]);
     }
     public function edit(Club $club)
     {
