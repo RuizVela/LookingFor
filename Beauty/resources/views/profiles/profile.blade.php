@@ -4,20 +4,24 @@
 
 <?php
     echo "Nombre: $user->name<br>";
-    echo "Email: $user->email<br>";
     echo "Descripción: $user->description<br>";
     echo "Puesto: $user->position<br>";
 ?>
-
+<table>
+Equipos a los que pertenece:
+<tr>
+    @foreach($groups as $group)<td>
+    <form method="GET" action="/group/{{$group->id}}">
+        <input type="submit" value="{{$group->name}}">
+    </form></td>
+    @endforeach
+</tr>
+</table>
 @can('edit',$profile ?? $user)
     <form method="GET" action="/profile/{{$user->id}}/edit">
-        <input type="submit" value="Editar">
+        <input type="submit" value="Editar Perfil">
     </form>
 @endcan
-
-<form method="GET" action="/profile">
-    <input type="submit" value="Lista de Usuarios">
-</form>
 
 <form method="GET" action="/user{{$user->id}}/addToGroup">
     <input type="submit" value="Añadir a grupo">
@@ -26,5 +30,5 @@
     <input type="submit" value="Sacar de un grupo">
 </form>
 
-@include('comments.create')
 @include('comments.list',['comments'=>$user->comments])
+@include('comments.create')

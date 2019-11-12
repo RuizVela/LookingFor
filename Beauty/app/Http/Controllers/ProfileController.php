@@ -14,7 +14,8 @@ class ProfileController extends Controller
     }
     public function show(User $user)
     {
-       return view('profiles/profile',['user'=>$user]);
+        $groups = $user->groups;
+       return view('profiles/profile',['user'=>$user],['groups'=>$groups]);
     }
     public function edit(User $profile)
     {   if($this->authorize('edit',$profile))
@@ -27,22 +28,20 @@ class ProfileController extends Controller
         $profile->update($request->all());
         return redirect("profile/$profile->id");
     }
+    public function findGroup(User $user)
+    {   
+        $groups = auth()->user()->groups;
+        return view('profiles/addToGroup', ['user'=>$user], ['groups'=>$groups]);
+    }
     public function addToGroup(User $user, Request $request)
     {
         $user->addToGroup($request->group_id);
         return redirect("profile");
     }
-
     public function detachGroup(User $user, Request $request)
     {   
         $user->deleteFromGroup($request->group_id);
         return redirect("profile");
-    }
-
-    public function findGroup(User $user)
-    {   
-        $groups = auth()->user()->groups;
-        return view('profiles/addToGroup', ['user'=>$user], ['groups'=>$groups]);
     }
     public function kickFromGroup(User $user)
     {
