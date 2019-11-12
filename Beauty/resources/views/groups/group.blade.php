@@ -4,10 +4,14 @@
 
 Nombre de equipo: {{$group->name}}<br>
 Descripción: {{$group->description}}<br>
+
+{{-- TODO: que $club sea opcional --}}
 Club al que pertenece:
 <form action="/club/{{$club->id}}" method="GET">
     <input type="submit" value="{{$club->name}}">
 </form>
+
+
 <br>
 A que juega este equipo: {{$game->name}}<br><br>
 

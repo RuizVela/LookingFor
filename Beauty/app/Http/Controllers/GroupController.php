@@ -8,12 +8,10 @@ use App\User;
 
 class GroupController extends Controller
 {
-    public function index()
-
+    public function index(Request $request)
     {   
-        $groups = Group::all();
+        $groups = Group::all()->where('game_id',$request->game_id);
         return view('Groups.index',['groups'=>$groups]);
-        
     }
     public function create()
     {
