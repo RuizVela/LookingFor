@@ -30,7 +30,9 @@ class GameController extends Controller
     }
     public function edit(Game $game)
     {
-        return view('games.edit',['game'=>$game]);
+        if ($this->authorize('edit', $game)) {
+            return view('games.edit', ['game'=>$game]);
+        }
     }
     public function update(Request $request, Game $game)
     {
@@ -39,8 +41,10 @@ class GameController extends Controller
     }
     public function destroy(Game $game)
     {
-        $game->delete();
+        if ($this->authorize('delete', $game)) {
+            $game->delete();
             redirect('game');
+        }
     }
     public function gameGroupOffers(Game $game)
     {

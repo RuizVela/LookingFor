@@ -1,4 +1,4 @@
-Ofertas de {{$game->name}}<br>
+Ofertas de {{$game->name}}:<br><br>
 @foreach ($gameGroupOffers as $gameGroupOffer)
     {{$gameGroupOffer->title}}<br>
     <form action="/offer/{{$gameGroupOffer->id}}" method="GET">

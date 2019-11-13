@@ -7,6 +7,7 @@
     echo "Descripción: $user->description<br>";
     echo "Puesto: $user->position<br>";
 ?>
+@if(count($groups))
 <table>
 Equipos a los que pertenece:
 <tr>
@@ -17,6 +18,8 @@ Equipos a los que pertenece:
     @endforeach
 </tr>
 </table>
+@endif
+
 @can('edit',$profile ?? $user)
     <form method="GET" action="/profile/{{$user->id}}/edit">
         <input type="submit" value="Editar Perfil">
