@@ -45,6 +45,6 @@ class GameController extends Controller
     public function gameOffers(Game $game)
     {
         $gameOffers = $game->offers;
-        return view('games.offers',['gameOffers'=>$gameOffers]);
+        return view('games.offers',['gameOffers'=>$gameOffers,'game'=>$game]);
     }
 }
