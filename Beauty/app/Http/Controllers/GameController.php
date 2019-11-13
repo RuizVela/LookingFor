@@ -42,9 +42,9 @@ class GameController extends Controller
         $game->delete();
             redirect('game');
     }
-    public function gameOffers(Game $game)
+    public function gameGroupOffers(Game $game)
     {
-        $gameOffers = $game->offers;
-        return view('games.offers',['gameOffers'=>$gameOffers,'game'=>$game]);
+        $gameGroupOffers = $game->offers->where('group_offer',true);    
+        return view('games.offers',['gameGroupOffers'=>$gameGroupOffers,'game'=>$game]);
     }
 }

@@ -45,4 +45,4 @@ Route::resource('club', 'ClubController');
 
 Route::resource('game','GameController');
 
-Route::get('gameOffers/{game}', 'GameController@gameOffers')->name('gameOffers');
+Route::get('gameGroupOffers/{game}', 'GameController@gameGroupOffers')->name('gameGroupOffers');

@@ -1,7 +1,7 @@
 Ofertas de {{$game->name}}<br>
-@foreach ($gameOffers as $gameOffer)
-    {{$gameOffer->title}}<br>
-    <form action="/offer/{{$gameOffer->id}}" method="GET">
+@foreach ($gameGroupOffers as $gameGroupOffer)
+    {{$gameGroupOffer->title}}<br>
+    <form action="/offer/{{$gameGroupOffer->id}}" method="GET">
         <input type="submit" value="Mostrar oferta">
     </form>
 @endforeach
