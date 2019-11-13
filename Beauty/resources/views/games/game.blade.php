@@ -8,7 +8,7 @@
     <input type="submit" value="Mostrar equipos">
 </form>
 
-<form action="/offer" method="GET">
+<form action="/gameOffers/{{$game->id}}" method="GET">
     <input type="submit" value="Mostrar ofertas">
 </form>
 

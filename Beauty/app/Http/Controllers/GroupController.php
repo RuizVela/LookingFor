@@ -8,10 +8,9 @@ use App\User;
 
 class GroupController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {   
-        // TODO ruta para los equipos de cada juego
-        $groups = Group::all()->where('game_id',$request->game_id);
+        $groups = Group::all();
         return view('Groups.index',['groups'=>$groups]);
     }
     public function create()

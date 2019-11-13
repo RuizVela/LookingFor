@@ -10,6 +10,7 @@
 <form method="GET" action="/offer/create">
     <input type="submit" value="Crear Oferta">
 </form>
+
 {{-- TODO quitar if y coger las ofertas en el modelo --}}
 @foreach ($offers as $offer)
     @if ($offer->group_offer==TRUE)

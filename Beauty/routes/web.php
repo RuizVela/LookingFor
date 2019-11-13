@@ -44,3 +44,5 @@ Route::resource('comment', 'CommentController')->except(['index','show']);
 Route::resource('club', 'ClubController');
 
 Route::resource('game','GameController');
+
+Route::get('gameOffers/{game}', 'GameController@gameOffers')->name('gameOffers');

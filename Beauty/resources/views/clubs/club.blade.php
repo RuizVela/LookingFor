@@ -12,8 +12,7 @@ Descripción: {{$club->description}}<br>
         <input type="submit" value="eliminar">
 </form>
 
-{{-- TODO: preguntar david --}}
-@if($groups->first->id != null )
+@if(count($groups) )
 Equipos que pertenecen a este club:
     @foreach($groups as $group)
     <form method="GET" action="/group/{{$group->id}}">
