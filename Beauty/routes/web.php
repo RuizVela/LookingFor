@@ -46,3 +46,5 @@ Route::resource('club', 'ClubController');
 Route::resource('game','GameController');
 
 Route::get('gameGroupOffers/{game}', 'GameController@gameGroupOffers')->name('gameGroupOffers');
+
+Route::get('gameUserOffers/{game}', 'GameController@gameUserOffers')->name('gameUserOffers');

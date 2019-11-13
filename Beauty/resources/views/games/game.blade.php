@@ -11,6 +11,9 @@
 <form action="/gameGroupOffers/{{$game->id}}" method="GET">
     <input type="submit" value="Mostrar ofertas de equipos">
 </form>
+<form action="/gameUserOffers/{{$game->id}}" method="GET">
+    <input type="submit" value="Mostrar ofertas de users">
+</form>
 
  <form action="/game/{{$game->id}}/edit"
     method="GET"> 

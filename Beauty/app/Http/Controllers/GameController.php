@@ -45,6 +45,11 @@ class GameController extends Controller
     public function gameGroupOffers(Game $game)
     {
         $gameGroupOffers = $game->offers->where('group_offer',true);    
-        return view('games.offers',['gameGroupOffers'=>$gameGroupOffers,'game'=>$game]);
+        return view('games.groupOffers',['gameGroupOffers'=>$gameGroupOffers,'game'=>$game]);
+    }
+    public function gameUserOffers(Game $game)
+    {
+        $gameUserOffers = $game->offers->where('group_offer',false);    
+        return view('games.userOffers',['gameUserOffers'=>$gameUserOffers,'game'=>$game]);
     }
 }
