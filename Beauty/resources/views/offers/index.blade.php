@@ -2,7 +2,7 @@
     <input type="submit" value="Página principal">
 </form>
 <form method="GET" action="/group">
-    <input type="submit" value="Mostrar Grupos">
+    <input type="submit" value="Mostrar Equipos">
 </form>
 <form method="GET" action="/profile">
     <input type="submit" value="Mostrar Perfiles">

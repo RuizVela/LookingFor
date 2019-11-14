@@ -1,6 +1,6 @@
 <form method="POST" action="/group">
     @csrf
-    <label>Nombre del grupo:</label>
+    <label>Nombre del equipo:</label>
     <input type="text" name="name">
     <br>
     <label>Descripción:</label>
@@ -10,5 +10,5 @@
 <input type="submit" value="Crear">
 </form>
 <form method="GET" action="/group">
-    <input type="submit" value="Lista de grupos">
+    <input type="submit" value="Lista de equipos">
 </form>

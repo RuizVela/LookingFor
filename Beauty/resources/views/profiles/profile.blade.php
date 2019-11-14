@@ -26,10 +26,10 @@ Equipos a los que pertenece:
 @endcan
 
 <form method="GET" action="/user{{$user->id}}/addToGroup">
-    <input type="submit" value="Añadir a grupo">
+    <input type="submit" value="Añadir a equipo">
 </form>
 <form method="GET" action="/user{{$user->id}}/kick">
-    <input type="submit" value="Sacar de un grupo">
+    <input type="submit" value="Sacar de un equipo">
 </form>
 
 @include('comments.list',['comments'=>$user->comments])
