@@ -27,7 +27,7 @@ class User extends Authenticatable
     }
     public function groups()
     {
-        return $this->belongsToMany('App\Group');
+        return $this->belongsToMany('App\Group')->withPivot('admin');
     }
     public function offers()
     {
@@ -36,6 +36,11 @@ class User extends Authenticatable
     public function answer()
     {
         return $this->hasMany('App\Answer');
+    }
+    public function getAdmins()
+    {
+        $admins = $this->groups()->where('admin',true);
+        return $admins;
     }
     public function addToGroup($groupId)
     {

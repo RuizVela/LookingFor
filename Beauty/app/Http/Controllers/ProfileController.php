@@ -30,7 +30,7 @@ class ProfileController extends Controller
     }
     public function findGroup(User $user)
     {   
-        $groups = auth()->user()->groups;
+        $groups = auth()->user()->getAdmins;
         return view('profiles/addToGroup', ['user'=>$user], ['groups'=>$groups]);
     }
     public function addToGroup(User $user, Request $request)
