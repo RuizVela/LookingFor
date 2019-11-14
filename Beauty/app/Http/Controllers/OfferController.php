@@ -14,11 +14,6 @@ class OfferController extends Controller
         $offers = Offer::all();
         return view('Offers.index',['offers'=>$offers]);
     }
-    public function indexGroups()
-    {
-        $offers = Offer::all();
-        return view('Offers.indexGroups',['offers'=>$offers]);
-    }
     public function create()
     {
         return view ('Offers.create');

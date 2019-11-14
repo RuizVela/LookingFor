@@ -26,9 +26,6 @@ Route::get('group{group}/addUser','GroupController@findUser')->name('group.findU
 
 Route::get('group{group}/deleteUser{user}','GroupController@deleteUser')->name('group.deleteUser');
 
-//TODO: renombrar ruta
-Route::get('index', 'OfferController@indexGroups')->name('offer.indexGroups');
-
 Route::patch('user{user}/addToGroup','ProfileController@addToGroup')->name('user.addToGroup');
 
 Route::get('user{user}/addToGroup','ProfileController@findGroup')->name('user.findGroup');

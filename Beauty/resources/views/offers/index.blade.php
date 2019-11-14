@@ -11,15 +11,12 @@
     <input type="submit" value="Crear Oferta">
 </form>
 
-{{-- TODO quitar if y coger las ofertas en el modelo --}}
 @foreach ($offers as $offer)
-    @if ($offer->group_offer==FALSE)
-        <li> {{$offer->title}}
-            <form method="GET" action="/offer/{{$offer->id}}">
-                <input type="submit" value="Mostrar Oferta">
-            </form>
-        </li>
-    @endif
+    <li> {{$offer->title}}
+        <form method="GET" action="/offer/{{$offer->id}}">
+            <input type="submit" value="Mostrar Oferta">
+        </form>
+    </li>
 @endforeach
 
 
