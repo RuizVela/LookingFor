@@ -9,8 +9,8 @@ class GroupUserTable extends Migration
     public function up()
     {
         Schema::create('group_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('group_id')->unsigned();
-            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->unsignedBigInteger('group_id');
+            $table->unsignedBigInteger('user_id');
             $table->primary(['group_id', 'user_id']);
             $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -19,6 +19,6 @@ class GroupUserTable extends Migration
     }
     public function down()
     {
-        Schema::dropIfExists('user_group');
+        Schema::dropIfExists('group_user');
     }
 }
