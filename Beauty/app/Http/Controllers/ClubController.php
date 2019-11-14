@@ -29,7 +29,9 @@ class ClubController extends Controller
     }
     public function edit(Club $club)
     {
-        return view('clubs.edit',['club'=>$club]);
+        if ($this->authorize('edit', $club)) {
+            return view('clubs.edit', ['club'=>$club]);
+        }
     }
     public function update(Request $request, Club $club)
     {
@@ -38,8 +40,11 @@ class ClubController extends Controller
     }
     public function destroy(Club $club)
     {
+        if ($this->authorize('edit', $club)) 
+        {
             $club->delete();
             redirect('club');
+        }
     }
     public function addUser(Club $club, User $user)
     {

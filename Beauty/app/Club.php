@@ -25,4 +25,9 @@ class Club extends Model
     {
         $this->users()->detach($userId);
     }
+    public function getAdmins()
+    {
+        $admins = $this->users()->where('admin',true);
+        return $admins;
+    }
 }

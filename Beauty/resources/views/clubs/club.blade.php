@@ -3,15 +3,18 @@
 </form>
 Nombre del club: {{$club->name}}<br>
 Descripción: {{$club->description}}<br>
+@can('edit',$club)
 <form action="/club/{{$club->id}}/edit" method="GET"> 
         <input type="submit" value="Editar">
 </form>
+ @endcan
+ @can('delete',$club)
 <form method="POST" action="/club/{{$club->id}}">
         @csrf
         @method('delete')
         <input type="submit" value="eliminar">
 </form>
-
+@endcan
 @if(count($groups) )
 Equipos que pertenecen a este club:
     @foreach($groups as $group)
