@@ -9,7 +9,22 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    protected $fillable = [
+        'name', 'email', 'password', 'description', 'position'
+    ];
 
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public function clubs()
+    {
+        return $this->belongsToMany('App\Club');
+    }
     public function groups()
     {
         return $this->belongsToMany('App\Group');
@@ -22,27 +37,16 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Answer');
     }
-public function addToGroup($groupId)
-{
-    $this->groups()->attach($groupId);
-}
-public function deleteFromGroup($groupId)
-{
-    $this->groups()->detach($groupId);
-}
-public function comments()
-{
-    return $this->hasMany('App\Comment','profile_id');
-}
-    protected $fillable = [
-        'name', 'email', 'password', 'description', 'position'
-    ];
-
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function addToGroup($groupId)
+    {
+        $this->groups()->attach($groupId);
+    }
+    public function deleteFromGroup($groupId)
+    {
+        $this->groups()->detach($groupId);
+    }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment','profile_id');
+    }
 }

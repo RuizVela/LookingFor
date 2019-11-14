@@ -40,6 +40,13 @@ class ClubController extends Controller
     {
             $club->delete();
             redirect('club');
-        
+    }
+    public function addUser(Club $club, User $user)
+    {
+        $club->addUser($user->id);
+    }
+    public function deleteUser(Club $club, User $user)
+    {
+        $club->deleteUser($user->id);
     }
 }
