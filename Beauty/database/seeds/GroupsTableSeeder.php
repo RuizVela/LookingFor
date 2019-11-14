@@ -6,7 +6,7 @@ class GroupsTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(App\Group::class, 5)->create()->each(function ($group)
+        factory(App\Group::class, 15)->create()->each(function ($group)
         {
             $users = App\User::all();
                 $usersSelected = $users->random(3);
