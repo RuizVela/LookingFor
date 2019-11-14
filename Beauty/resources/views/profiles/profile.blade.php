@@ -5,7 +5,6 @@
 <?php
     echo "Nombre: $user->name<br>";
     echo "Descripción: $user->description<br>";
-    echo "Puesto: $user->position<br>";
 ?>
 @if(count($groups))
 <table>

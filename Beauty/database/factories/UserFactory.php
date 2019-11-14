@@ -25,6 +25,5 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
         'is_admin'=> $faker->boolean(),
         'description'=>$faker->text(300),
-        'position'=>$faker->text(50),
     ];
 });
