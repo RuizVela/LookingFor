@@ -3,7 +3,7 @@
     </form>
     
 
-<form action="/group" method="GET">
+<form action="/gameGroups/{{$game->id}}" method="GET">
     <input type="hidden" name="game_id" value="{{$game->id}}">
     <input type="submit" value="Mostrar equipos">
 </form>

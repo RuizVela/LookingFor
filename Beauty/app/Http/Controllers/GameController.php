@@ -46,6 +46,11 @@ class GameController extends Controller
             redirect('game');
         }
     }
+    public function gameGroups(Game $game)
+    {
+        $gameGroups = $game->groups;
+        return view('games.groups',['gameGroups'=>$gameGroups, 'game'=>$game]);
+    }
     public function gameGroupOffers(Game $game)
     {
         $gameGroupOffers = $game->offers->where('group_offer',true);    

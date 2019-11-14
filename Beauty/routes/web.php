@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\GameController;
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -45,3 +43,5 @@ Route::resource('game','GameController');
 Route::get('gameGroupOffers/{game}', 'GameController@gameGroupOffers')->name('gameGroupOffers');
 
 Route::get('gameUserOffers/{game}', 'GameController@gameUserOffers')->name('gameUserOffers');
+
+Route::get('gameGroups/{game}', 'GameController@gameGroups')->name('gameGroups');
