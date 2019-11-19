@@ -15,7 +15,6 @@ class ClubController extends Controller
     public function create()
     {
         return view('clubs.create');
-
     }
     public function store(Request $request)
     {
@@ -29,7 +28,8 @@ class ClubController extends Controller
     }
     public function edit(Club $club)
     {
-        if ($this->authorize('edit', $club)) {
+        if ($this->authorize('edit', $club)) 
+        {
             return view('clubs.edit', ['club'=>$club]);
         }
     }

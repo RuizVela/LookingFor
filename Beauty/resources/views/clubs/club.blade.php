@@ -3,6 +3,10 @@
 </form>
 Nombre del club: {{$club->name}}<br>
 Descripción: {{$club->description}}<br>
+Administradores: 
+@foreach($club->users as $user)
+{{$user->name}}. 
+@endforeach
 @can('edit',$club)
 <form action="/club/{{$club->id}}/edit" method="GET"> 
         <input type="submit" value="Editar">
