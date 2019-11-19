@@ -48,4 +48,14 @@ class ProfileController extends Controller
         $groups = $user->groups;
         return view('profiles/kickFromGroup', ['user'=>$user], ['groups'=>$groups]);
     }
+    public function findClub(User $user)
+    {   
+        $clubs = auth()->user()->clubs;
+        return view('profiles/addToClub', ['user'=>$user], ['clubs'=>$clubs]);
+    }
+    public function addToClub(User $user, Request $request)
+    {
+        $user->addToClub($request->club_id);
+        return redirect("profile");
+    }
 }

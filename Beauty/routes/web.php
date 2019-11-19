@@ -38,6 +38,10 @@ Route::resource('comment', 'CommentController')->except(['index','show']);
 
 Route::resource('club', 'ClubController');
 
+Route::get('user{user}/addToClub','ProfileController@findClub')->name('user.findClub');
+
+Route::patch('user{user}/addToClub','ProfileController@addToClub')->name('user.addToClub');
+
 Route::resource('game','GameController');
 
 Route::get('gameGroupOffers/{game}', 'GameController@gameGroupOffers')->name('gameGroupOffers');

@@ -2,10 +2,10 @@
     <input type="submit" value="Página principal">
 </form>
 
-<?php
-    echo "Nombre: $user->name<br>";
-    echo "Descripción: $user->description<br>";
-?>
+
+    Nombre: {{$user->name}}<br>
+    Descripción: {{$user->description}}<br>
+
 @if(count($groups))
 <table>
 Equipos a los que pertenece:
@@ -25,6 +25,9 @@ Equipos a los que pertenece:
     </form>
 @endcan
 
+<form method="GET" action="/user{{$user->id}}/addToClub">
+    <input type="submit" value="Añadir a Club">
+</form>
 <form method="GET" action="/user{{$user->id}}/addToGroup">
     <input type="submit" value="Añadir a equipo">
 </form>

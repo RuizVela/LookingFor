@@ -54,4 +54,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Comment','profile_id');
     }
+    public function addToClub($clubId)
+    {
+        $this->clubs()->attach($clubId);
+    }
 }
