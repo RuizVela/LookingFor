@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Club;
 use Illuminate\Http\Request;
+use App\User;
 
 class ClubController extends Controller
 {
@@ -46,9 +47,15 @@ class ClubController extends Controller
             redirect('club');
         }
     }
-    public function addUser(Club $club, User $user)
+    public function addUser(Club $club, Request $request)
     {
-        $club->addUser($user->id);
+        $club->addUser($request->user_id);
+        return redirect("club/$club->id");
+    }
+    public function findUser(Club $club)
+    {
+        $users = User::all();
+        return view('clubs.addUser', ['club'=>$club, 'users'=>$users]);
     }
     public function deleteUser(Club $club, User $user)
     {
