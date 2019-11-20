@@ -12,10 +12,10 @@ class ProfileController extends Controller
         $profiles = User::all();
         return view('profiles/index',['profiles'=>$profiles]); 
     }
-    public function show(User $user)
+    public function show(User $profile)
     {
-        $groups = $user->groups;
-       return view('profiles/profile',['user'=>$user],['groups'=>$groups]);
+        $groups = $profile->groups;
+       return view('profiles/profile',['user'=>$profile],['groups'=>$groups]);
     }
     public function edit(User $profile)
     {   if($this->authorize('edit',$profile))
