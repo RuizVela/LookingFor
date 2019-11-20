@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Club;
 use Illuminate\Http\Request;
 use App\User;
+use App\Group;
 
 class ClubController extends Controller
 {
@@ -54,11 +55,28 @@ class ClubController extends Controller
     }
     public function findUser(Club $club)
     {
-        $users = User::all();
-        return view('clubs.addUser', ['club'=>$club, 'users'=>$users]);
+        if ($this->authorize('edit', $club)) 
+        {
+            $users = User::all();
+            return view('clubs.addUser', ['club'=>$club, 'users'=>$users]);
+        }
     }
     public function deleteUser(Club $club, User $user)
     {
         $club->deleteUser($user->id);
+    }
+
+    public function findGroup(Club $club)
+    {
+        if ($this->authorize('edit', $club)) 
+        {
+            $groups = $club->getGroupsWithoutClub();
+            return view('clubs.addGroup', ['club'=>$club, 'groups'=>$groups]);
+        }
+    }
+    public function addGroup(Request $request, Club $club) 
+    {
+        $club->addGroup($request->group_id);
+        return redirect("club/$club->id");
     }
 }

@@ -30,7 +30,9 @@ Route::resource('club', 'ClubController');
 Route::patch('club{club}/addUser','ClubController@addUser')->name('club.addUser');
 Route::get('club{club}/addUser','ClubController@findUser')->name('club.findUser');
 Route::get('club{club}/deleteUser{user}','ClubController@deleteUser')->name('club.deleteUser');
-
+Route::get('club{club}/addGroup','ClubController@findGroup')->name('club.findGroup');
+Route::patch('club{club}/addGroup', 'ClubController@addGroup')->name('club.addGroup');
+    
 Route::resource('offer', 'OfferController');
 
 Route::resource('answer', 'AnswerController')->except(['index','show']);

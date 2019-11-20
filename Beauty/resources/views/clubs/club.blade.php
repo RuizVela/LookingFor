@@ -11,6 +11,9 @@ Miembros:
 <form method="GET" action="/club{{$club->id}}/addUser">
     <input type="submit" value="Añadir usuario a este club">
 </form>
+<form method="GET" action="/club{{$club->id}}/addGroup">
+    <input type="submit" value="Añadir equipo a este club">
+</form>
 <form action="/club/{{$club->id}}/edit" method="GET"> 
         <input type="submit" value="Editar">
 </form>

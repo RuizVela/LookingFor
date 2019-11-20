@@ -2,7 +2,6 @@
     <input type="submit" value="Página principal">
 </form>
 
-
     Nombre: {{$user->name}}<br>
     Descripción: {{$user->description}}<br>
 

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Null_;
 
 class Club extends Model
 {
@@ -29,5 +30,15 @@ class Club extends Model
     {
         $admins = $this->users()->where('admin',true);
         return $admins;
+    }
+    public function getGroupsWithoutClub()
+    {
+        $groups = Group::all()->where('club_id',null);
+        return $groups;
+    }
+    public function addGroup($groupId)
+    {
+        //TODO: attach no funciona con hasmany
+        $this->groups()->attach($groupId);
     }
 }
