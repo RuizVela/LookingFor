@@ -49,9 +49,10 @@ class GroupController extends Controller
             return redirect('group');
         }
     }
-    public function addUser(Group $group, User $user)
+    public function addUser(Group $group, Request $request)
     {
-        $group->addUser($user->id);
+        $group->addUser($request->user_id);
+        return redirect("group/$group->id");
     }
     public function deleteUser(Group $group, User $user)
     {
@@ -59,10 +60,13 @@ class GroupController extends Controller
     }
     public function findUser(Group $group, User $user)
     {
-        return view('groups.addUser', ['group'=>$group, 'user'=>$user]);
+        $users = User::all();
+        return view('groups.addUser', ['group'=>$group, 'users'=>$users]);
     }
     public function setAdmin(Group $group, User $user)
     {
         $group->setAdmin($user->id);
     }
 }
+
+

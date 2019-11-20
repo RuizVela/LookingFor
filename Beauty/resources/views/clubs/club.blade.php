@@ -20,7 +20,7 @@ Administradores:
 </form>
 @endcan
 @if(count($groups) )
-Equipos que pertenecen a este club:
+<br>Equipos que pertenecen a este club:
     @foreach($groups as $group)
     <form method="GET" action="/group/{{$group->id}}">
         <input type="submit" value="{{$group->name}}">

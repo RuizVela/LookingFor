@@ -35,10 +35,15 @@ Miembros de este equipo:
 @endforeach
 
 @can('edit',$group)
+<form method="GET" action="/group{{$group->id}}/addUser">
+    <input type="submit" value="Añadir usuario a este equipo">
+</form>
+
 <form method="GET" action="/group/{{$group->id}}/edit">
 <input type="submit" value="Editar">
 </form>
 @endcan
+
 @can('delete',$group)
 <form method="POST" action="/group/{{$group->id}}">
 @csrf
