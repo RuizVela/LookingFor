@@ -38,7 +38,8 @@ class Club extends Model
     }
     public function addGroup($groupId)
     {
-        //TODO: attach no funciona con hasmany
-        $this->groups()->attach($groupId);
+        $group = Group::find($groupId);
+        $group->club_id = $this->id;
+        $group->save();
     }
 }
