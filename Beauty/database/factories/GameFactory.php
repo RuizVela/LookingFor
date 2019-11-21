@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Game::class, function (Faker $faker) {
     return [
-        'name'=> $faker->text(20),
+        'name'=> 'Juego'.rand(1,1000),
     ];
 });
