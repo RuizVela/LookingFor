@@ -24,6 +24,7 @@ Route::resource('game','GameController');
 Route::get('gameGroupOffers/{game}', 'GameController@gameGroupOffers')->name('gameGroupOffers');
 Route::get('gameUserOffers/{game}', 'GameController@gameUserOffers')->name('gameUserOffers');
 Route::get('gameGroups/{game}', 'GameController@gameGroups')->name('gameGroups');
+Route::delete('game/{game}/deleteImage', 'GameController@deleteImage')->name('delete.Image');
 
 Route::resource('club', 'ClubController');
 Route::patch('club{club}/addUser','ClubController@addUser')->name('club.addUser');
