@@ -21,7 +21,8 @@ class GameController extends Controller
     }
     public function store(Request $request)
     {
-        Game::create($request->all());
+        $game=Game::create($request->all());
+        $game->uploadImage($request,$game);
         return redirect('game');
     }
     public function show(Game $game)
@@ -37,6 +38,7 @@ class GameController extends Controller
     public function update(Request $request, Game $game)
     {
         $game->update($request->all());
+        $game->uploadImage($request,$game);
         return redirect("game/$game->id");
     }
     public function destroy(Game $game)
@@ -60,5 +62,10 @@ class GameController extends Controller
     {
         $gameUserOffers = $game->offers->where('group_offer',false);    
         return view('games.userOffers',['gameUserOffers'=>$gameUserOffers,'game'=>$game]);
+    }
+    public function deleteImage(Game $game)
+    {
+        $game->deleteImage($game);
+        return redirect("game/$game->id");
     }
 }
