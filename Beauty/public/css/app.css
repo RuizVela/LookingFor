@@ -11356,3 +11356,20 @@ a.text-dark:focus {
   }
 }
 
+#buttons {
+  position: absolute;
+  margin-left: 200px;
+  display: -webkit-inline-box;
+  display: inline-flex;
+}
+
+.navbar {
+  height: 106px;
+  width: 100%;
+  position: fixed;
+}
+
+.navbar h1 {
+  position: absolute;
+}
+
