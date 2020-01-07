@@ -1,4 +1,4 @@
-@extends('layouts.app')
+
 <style>
      body {
     background: url("https://esports.as.com/2018/03/16/reportajes/esports_1117998205_60112_1440x600.jpg") no-repeat center center fixed;
@@ -6,7 +6,7 @@
     }
     h1 {
         text-align: center;
-        font-size: 50px;
+        font-size: 45px;
     }
     #text {
         background-color: rgba(128, 128, 128, 0.7);
@@ -14,7 +14,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 200px;
+        top: 100px;
         margin: auto;
         width: 500px;  
     }
