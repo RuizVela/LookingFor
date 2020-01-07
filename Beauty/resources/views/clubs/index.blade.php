@@ -1,7 +1,7 @@
-<form method="GET" action="/main">
-    <input type="submit" value="Página principal">
-</form>
-<form method="GET" action="/club/create">
+@extends('layouts.app')
+@section('content')
+<div class="main">
+    <form method="GET" action="/club/create">
         <input type="submit" value="Crear Club">
 </form>
 Lista de Clubs:
@@ -10,3 +10,5 @@ Lista de Clubs:
     <input type="submit" value="{{$club->name}}">
 </form>
 @endforeach
+</div>
+@endsection

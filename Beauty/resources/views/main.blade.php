@@ -2,7 +2,7 @@
 @section('content')
 
 <body>
-    <div class="games">
+    <div class="main">
         @include('games.index')
     </div>
 </body>

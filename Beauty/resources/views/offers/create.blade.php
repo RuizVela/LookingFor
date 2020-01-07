@@ -1,6 +1,9 @@
-<form method="POST" action="/offer">
-  @csrf
-  <label>Ofertas</label>
+@extends('layouts.app')
+@section('content')
+<div class="main">
+  <form method="POST" action="/offer">
+    @csrf
+  <label>Oferta</label>
   <input required type="text" name="title">
   <br>
   <label>Descripción:</label>
@@ -15,5 +18,7 @@
   <input type="submit">
 </form>
 <form action="/offer" method="GET">
-    <input type="submit" value="Lista de Ofertas">
+  <input type="submit" value="Lista de Ofertas">
 </form> 
+</div>
+@endsection

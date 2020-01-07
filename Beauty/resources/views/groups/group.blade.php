@@ -1,8 +1,8 @@
-<form method="GET" action="/main">
-<input type="submit" value="Página principal">
-</form>
-
-Nombre de equipo: {{$group->name}}<br>
+@extends('layouts.app')
+@section('content')
+<div class="main">
+    
+    Nombre de equipo: {{$group->name}}<br>
 Descripción: {{$group->description}}<br>
 
 @if($club != null)
@@ -18,8 +18,8 @@ A que juega este equipo: {{$game->name}}<br><br>
 Administradores del equipo:<br>
 
 @foreach($admins as $admin)
-    {{$admin->name}}<br>
-    
+{{$admin->name}}<br>
+
 @endforeach
 
 <br>
@@ -40,14 +40,17 @@ Miembros de este equipo:
 </form>
 
 <form method="GET" action="/group/{{$group->id}}/edit">
-<input type="submit" value="Editar">
+    <input type="submit" value="Editar">
 </form>
 @endcan
 
 @can('delete',$group)
 <form method="POST" action="/group/{{$group->id}}">
-@csrf
-@method('delete')
-<input type="submit" value="eliminar">
+    @csrf
+    @method('delete')
+    <input type="submit" value="eliminar">
 </form>
 @endcan
+
+</div>
+@endsection

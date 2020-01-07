@@ -1,7 +1,6 @@
-<form method="GET" action="/main">
-    <input type="submit" value="Página principal">
-    </form>
-    
+@extends('layouts.app')
+@section('content')
+<div class="main">
 
 <form action="/gameGroups/{{$game->id}}" method="GET">
     <input type="hidden" name="game_id" value="{{$game->id}}">
@@ -16,7 +15,7 @@
 </form>
 
 @can('edit',$game)
- <form action="/game/{{$game->id}}/edit"
+<form action="/game/{{$game->id}}/edit"
     method="GET"> 
     <input type="submit" value="Editar">
 </form>
@@ -29,3 +28,5 @@
     <input type="submit" value="Borrar">
 </form>
 @endcan
+</div>
+@endsection

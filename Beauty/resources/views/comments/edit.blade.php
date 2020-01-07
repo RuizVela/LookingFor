@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
+<div class="main">
 <form action="/comment/{{$comment->id}}" method="POST">
     @csrf
     @method('patch')
@@ -6,3 +9,5 @@
     <input type="hidden" name="user_id" value="{{$comment->user_id}}">
     <input type="submit" value="Editar">
 </form>
+</div>
+@endsection

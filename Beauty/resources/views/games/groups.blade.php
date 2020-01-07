@@ -1,10 +1,15 @@
-Equipos que juegan a {{$game->name}}:<br><br>
-@foreach ($gameGroups as $gameGroup)
+@extends('layouts.app')
+@section('content')
+<div class="main">
+    Equipos que juegan a {{$game->name}}:<br><br>
+    @foreach ($gameGroups as $gameGroup)
     {{$gameGroup->name}}<br>
     <form action="/group/{{$gameGroup->id}}" method="GET">
         <input type="submit" value="Mostrar Equipo">
     </form>
 @endforeach
 <form action="/game/{{$game->id}}" method="GET">
-<input type="submit" value="Volver a {{$game->name}}">
+    <input type="submit" value="Volver a {{$game->name}}">
 </form>
+</div>
+@endsection
