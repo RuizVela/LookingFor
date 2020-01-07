@@ -1,3 +1,5 @@
+@if(auth()->user()) 
+{{-- TODO aplicar politicas --}}
 <form action="/comment" method="POST">
     @csrf
     <label>Comentar:</label>
@@ -7,3 +9,4 @@
     <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
     <input type="submit" value="Enviar">
 </form>
+@endif
