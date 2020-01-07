@@ -1,8 +1,8 @@
 <table>
 @foreach ($games as $game)
 <form action="/game/{{$game->id}}" method="GET">
-    <button type="submit" value="{{$game->name}}" style="margin:25px; background-color:transparent; border:none"> 
-        <img src="{{url($game->imageUrl())}}" style="width:225px; height:300px; box-shadow: 2px 2px 20px #009">
+    <button class="game_button" type="submit" value="{{$game->name}}"> 
+        <img class="game_image" src="{{url($game->imageUrl())}}">
         <br>
         {{$game->name}}
     </button>

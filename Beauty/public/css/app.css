@@ -11384,3 +11384,15 @@ body {
   z-index: -1;
 }
 
+.game_button {
+  margin: 25px;
+  background-color: transparent;
+  border: none;
+}
+
+.game_image {
+  width: 225px;
+  height: 300px;
+  box-shadow: 2px 2px 20px #009;
+}
+
