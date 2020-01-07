@@ -21,7 +21,7 @@
     <div id="app">
         <nav class="navbar navbar-dark bg-dark">
             <div class="container navbar">                    
-                <a href="/main"><h1>LookingFor</h1></a>
+                <h1><a href="/main">LookingFor</a></h1>
                     <div id="buttons">
                         <form method="GET" action="/profile">
                             <button type="submit" class="btn btn-secondary">Usuarios</button>
