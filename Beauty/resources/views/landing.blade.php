@@ -1,47 +1,35 @@
-
+@extends('layouts.app')
 <style>
      body {
-        
-    background: url("https://estaticos.elperiodico.com/resources/jpg/6/8/ciencia-del-universo-1530540262286.jpg") no-repeat center center fixed;
+    background: url("https://esports.as.com/2018/03/16/reportajes/esports_1117998205_60112_1440x600.jpg") no-repeat center center fixed;
     background-size: cover;
-    }
-    .form {
-        background-color: gray;
-        width: 300px;
-        padding: 10px;
-        text-align: center;
-        position: absolute;
-        right: 15;
-        top: 15;
-        border-radius: 10%;
-        display: block;
     }
     h1 {
         text-align: center;
         font-size: 50px;
     }
     #text {
-        background-color: rgba(128, 128, 128, 0.5);
+        background-color: rgba(128, 128, 128, 0.7);
+        font-family: Arial, Helvetica, sans-serif;
         position: absolute;
         left: 0;
         right: 0;
-        top: 100px;
+        top: 200px;
         margin: auto;
         width: 500px;  
     }
     p{
         font-size: 20px;
         font-weight: bold;
+        margin: 25px;
     }
     #enter{
         background-color: yellow;
-        border: none;
+        border-color: black;
         padding: 32px 54px;
         font-size: 32px;
-        margin: 0px 25%;
+        margin: 10px 25%;
     }
-
-   
 </style>
 
 <body>
@@ -53,17 +41,4 @@
     <input id="enter" type="button" value="ENTRA">
 </a>
     </div>
-    <div class="form">
-        @auth
-            <form action="{{ route('logout') }}" method="POST" >
-                @csrf
-                <input type="submit" value="Cerrar sesión">
-            </form>
-
-            @endauth
-            @guest
-        @include('auth.register')
-        @include('auth.login')
-    </div>
-    @endguest
 </body>
