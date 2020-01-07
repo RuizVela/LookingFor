@@ -1,4 +1,3 @@
-<h1>Juegos:</h1>
 <table>
 @foreach ($games as $game)
 <form action="/game/{{$game->id}}" method="GET">
