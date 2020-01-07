@@ -11365,6 +11365,8 @@ a.text-dark:focus {
 
 .navbar {
   height: 106px;
+  width: 100%;
+  position: fixed;
 }
 
 .navbar h1 {
