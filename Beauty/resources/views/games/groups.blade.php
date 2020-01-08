@@ -3,9 +3,9 @@
 <div class="main">
     Equipos que juegan a {{$game->name}}:<br><br>
     @foreach ($gameGroups as $gameGroup)
-    {{$gameGroup->name}}<br>
+    
     <form action="/group/{{$gameGroup->id}}" method="GET">
-        <input type="submit" value="Mostrar Equipo">
+        <input type="submit" value="{{$gameGroup->name}}">
     </form>
 @endforeach
 <form action="/game/{{$game->id}}" method="GET">
