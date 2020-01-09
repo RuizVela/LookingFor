@@ -1,7 +1,15 @@
 @extends('layouts.app')
 @section('content')
+<div class="commercial" id="commercial_left">
+    @include('commercial_left')
+</div>
+<div class="commercial" id="commercial_right">
+    @include('commercial_right')
+</div>
+<div class="in_image">
+<img class="game_image" src="{{url($game->imageUrl())}}">
+</div>
 <div class="main">
-
 <form action="/gameGroups/{{$game->id}}" method="GET">
     <input type="hidden" name="game_id" value="{{$game->id}}">
     <input type="submit" value="Mostrar equipos">
