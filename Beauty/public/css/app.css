@@ -11383,6 +11383,12 @@ body {
   position: absolute;
   z-index: -1;
   color: white;
+  width: 70%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  display: inline-block;
+  text-align: center;
 }
 
 .game_button {
@@ -11402,5 +11408,43 @@ input {
   border-radius: 25px;
   border-color: rgba(255, 255, 255, 0.2);
   color: gray;
+}
+
+.in_image {
+  position: absolute;
+  top: 120px;
+  left: 20%;
+}
+
+.commercial {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  top: 110px;
+  position: fixed;
+  width: 15%;
+  min-width: 200px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 15px;
+  text-align: center;
+  height: 80%;
+  justify-content: space-around;
+}
+
+.commercial img {
+  position: relative;
+  width: 90%;
+  margin: 5px 10px 5px;
+}
+
+#commercial_right {
+  right: 1%;
+}
+
+#commercial_left {
+  left: 1%;
 }
 
