@@ -32,7 +32,8 @@ class Club extends Model
         return $admins;
     }
     public function getGroupsWithoutClub()
-    {
+    { 
+        //TODO: puede que esta funcion vaya en el modelo de Group
         $groups = Group::all()->where('club_id',null);
         return $groups;
     }

@@ -37,10 +37,13 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Answer');
     }
-    public function getAdmins()
+    public function comments()
     {
-        $admins = $this->groups()->where('admin',true);
-        return $admins;
+        return $this->hasMany('App\Comment','profile_id');
+    }
+    public function getAdminGroups()
+    {
+        return $this->groups()->where('admin',true);
     }
     public function addToGroup($groupId)
     {
@@ -50,12 +53,13 @@ class User extends Authenticatable
     {
         $this->groups()->detach($groupId);
     }
-    public function comments()
-    {
-        return $this->hasMany('App\Comment','profile_id');
-    }
     public function addToClub($clubId)
     {
         $this->clubs()->attach($clubId);
     }
+    public function deleteFromClub($clubId)
+    {
+        $this->clubs()->detach($clubId);
+    }
+
 }
