@@ -42,7 +42,7 @@ class UserTest extends TestCase
         $this->assertNull($userGroup);
     }
 
-    public function test_si_getAdminGroups_devuelve_administradores_de_grupo()
+    public function test_si_getAdminGroups_devuelve_grupos_que_administra_el_usuario()
     {
         $this->group->addAdmin($this->user->id);
         $groupTwo = factory(Group::class)->create();
@@ -52,7 +52,7 @@ class UserTest extends TestCase
         $this->assertCount(2, $admins);
     }
 
-    public function test_si_getAdminGroups_NO_devuelve_NO_administradores_de_grupo()
+    public function test_si_getAdminGroups_NO_devuelve_grupos_NO_administrados()
     {
         $this->user->addToGroup($this->group->id);
 
